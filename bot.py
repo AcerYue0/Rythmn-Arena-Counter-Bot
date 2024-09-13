@@ -1,8 +1,12 @@
 import discord
 from discord.ext import commands
 
-# 使用 command prefix 設定機器人
-bot = commands.Bot(command_prefix="!")
+# 設置意圖 (Intents)
+intents = discord.Intents.default()
+intents.message_content = True
+
+# 創建 Bot 實例並設置命令前綴
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 # 判斷質數的函數
 def is_prime(n):
